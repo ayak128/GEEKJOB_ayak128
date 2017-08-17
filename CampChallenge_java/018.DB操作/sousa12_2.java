@@ -56,7 +56,7 @@ public class sousa12_2 extends HttpServlet {
                 out.print("検索できません。<br>前の画面に戻り、検索したい内容を入力してください。");
                 return;  // void（引数無し）のときは「return;」のみで離脱できる
             }else{
-                out.print("お探しの情報は下記の通りです。<br><br>");
+                out.print("検索を開始します。<br><br>");
             }
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -80,7 +80,7 @@ public class sousa12_2 extends HttpServlet {
             boolean tf = false;
 
             while (db_data.next()) {
-          //      out.print("お探しの情報は以下の通りです。<br>");
+                out.print("お探しの情報は以下の通りです。<br>");
                 out.print("ID：" + db_data.getInt("profilesID") + "<br>");
                 out.print("名前：" + db_data.getString("name") + "<br>");
                 out.print("電話番号：" + db_data.getString("tel") + "<br>");
